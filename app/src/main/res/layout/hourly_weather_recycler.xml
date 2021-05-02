@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hourly_weather_recycler"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_large"
+    android:orientation="horizontal"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/current_weather_layout"
+    tools:showIn="@layout/fragment_weather_details"
+    tools:listitem="@layout/hourly_weather_recycler_item"/>

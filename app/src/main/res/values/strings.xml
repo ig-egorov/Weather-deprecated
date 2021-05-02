@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Weather</string>
+    <!--Placeholders-->
+    <string name="temperature_placeholder">15&#xb0;</string>
+    <string name="date_placeholder">01</string>
+    <string name="time_placeholder">10</string>
+    <string name="day_placeholder">Mon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
