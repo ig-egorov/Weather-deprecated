@@ -1,4 +1,9 @@
 package com.example.weather.weather_details.retrofit.current
 
-class CurrentConditions {
+data class CurrentConditions(
+    val id: String,
+    val main: String,
+    val description: String,
+    val icon: String
+) {
 }

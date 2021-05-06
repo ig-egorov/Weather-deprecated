@@ -1,4 +1,6 @@
 package com.example.weather
 
-class WeatherApplication {
+import androidx.multidex.MultiDexApplication
+
+class WeatherApplication : MultiDexApplication() {
 }
