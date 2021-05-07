@@ -19,8 +19,8 @@ class WeatherDetailsViewModel : ViewModel() {
         viewModelJob.cancel()
     }
 
-    private val _currentTemperature = MutableLiveData<String>()
-    val currentTemperature: LiveData<String>
+    private val _currentTemperature = MutableLiveData<Double>()
+    val currentTemperature: LiveData<Double>
         get() = _currentTemperature
 
     private val _currentConditionsIcon = MutableLiveData<String>()

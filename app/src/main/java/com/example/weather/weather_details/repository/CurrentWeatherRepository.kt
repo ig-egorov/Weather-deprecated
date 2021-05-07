@@ -9,13 +9,13 @@ const val TAG = "CurrentWeatherRepo"
 class CurrentWeatherRepository {
 
     lateinit var currentWeatherProperty: CurrentWeatherProperty
-    var currentTemperature: String = "Temp NONE"
+    var currentTemperature: Double = 0.0
     var currentConditionsIcon: String = "Cond NONE"
 
     suspend fun getCurrentProperty() {
         try {
             currentWeatherProperty = WeatherApi.retrofitService.getCurrentWeather("Moscow")
-            currentTemperature = currentWeatherProperty.currentTemperature.tempString
+            currentTemperature = currentWeatherProperty.currentTemperature.temp
             currentConditionsIcon = currentWeatherProperty.currentConditions[0].icon
             Log.v(TAG, "temp: ${currentTemperature}, icon: ${currentConditionsIcon}")
         } catch (e: Exception) {
