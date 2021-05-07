@@ -1,4 +1,4 @@
-package com.example.weather.weather_details.retrofit.current
+package com.example.weather.weather_details.retrofit.current_weather_data
 
 import com.squareup.moshi.Json
 

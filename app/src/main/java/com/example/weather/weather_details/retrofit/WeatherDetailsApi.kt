@@ -1,10 +1,8 @@
 package com.example.weather.weather_details.retrofit
 
-import com.example.weather.weather_details.retrofit.current.CurrentWeatherProperty
-import com.squareup.moshi.JsonAdapter
+import com.example.weather.weather_details.retrofit.current_weather_data.CurrentWeatherProperty
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET

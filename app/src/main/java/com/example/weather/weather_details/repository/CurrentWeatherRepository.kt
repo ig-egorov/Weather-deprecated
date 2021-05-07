@@ -1,26 +1,26 @@
 package com.example.weather.weather_details.repository
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.example.weather.weather_details.retrofit.WeatherApi
-import com.example.weather.weather_details.retrofit.current.CurrentTemperature
-import com.example.weather.weather_details.retrofit.current.CurrentWeatherProperty
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.example.weather.weather_details.retrofit.current_weather_data.CurrentWeatherProperty
+
+const val TAG = "CurrentWeatherRepo"
 
 class CurrentWeatherRepository {
 
-    var currentTemperature: String = "NONE"
+    lateinit var currentWeatherProperty: CurrentWeatherProperty
+    var currentTemperature: String = "Temp NONE"
+    var currentConditionsIcon: String = "Cond NONE"
 
-    suspend fun getCurrentTemperature() {
-        var currentWeatherProperty: CurrentWeatherProperty
+    suspend fun getCurrentProperty() {
         try {
             currentWeatherProperty = WeatherApi.retrofitService.getCurrentWeather("Moscow")
             currentTemperature = currentWeatherProperty.currentTemperature.tempString
-            Log.v("CurrentWeatherRepo", "Temp ${currentTemperature}")
+            currentConditionsIcon = currentWeatherProperty.currentConditions[0].icon
+            Log.v(TAG, "temp: ${currentTemperature}, icon: ${currentConditionsIcon}")
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
+
 }

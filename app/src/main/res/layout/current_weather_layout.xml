@@ -5,6 +5,9 @@
         <variable
             name="viewModel"
             type="com.example.weather.weather_details.WeatherDetailsViewModel" />
+        <variable
+            name="currentWeatherRepository"
+            type="com.example.weather.weather_details.repository.CurrentWeatherRepository" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +20,7 @@
     app:layout_constraintTop_toTopOf="parent"
     tools:showIn="@layout/fragment_weather_details">
 
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
         android:id="@+id/current_weather_conditions_image"
         android:layout_width="@dimen/current_weather_conditions_image_width"
         android:layout_height="@dimen/current_weather_conditions_image_height"
@@ -30,6 +33,7 @@
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:imageSrc="@{viewModel.currentConditionsIcon}"
         tools:src="@drawable/placeholder_image" />
 
     <TextView
