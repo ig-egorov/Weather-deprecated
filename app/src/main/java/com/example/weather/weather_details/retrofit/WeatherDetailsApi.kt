@@ -10,6 +10,7 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 private const val API_KEY = "1594502c127ad840ab77f36f608636bd"
+private const val WEATHER_UNITS = "metric"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory()).build()
@@ -22,7 +23,7 @@ private val retrofit = Retrofit.Builder()
 interface WeatherDetailsApi {
     @GET("weather")
     suspend fun getCurrentWeather(@Query("q") city: String,
-                                  @Query("units") units: String = "metric",
+                                  @Query("units") units: String = WEATHER_UNITS,
                                   @Query("appid") apiKey: String = API_KEY): CurrentWeatherProperty
 }
 
